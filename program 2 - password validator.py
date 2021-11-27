@@ -28,5 +28,22 @@ def passwordintro ():
     time.sleep (1)
     print ("That's all for the instructions, you can now enter your password.")
 
+def getpassword ():
+    userpassword = input("Please enter password here: ")
+    return userpassword
+
+def capitalletter (password_):
+    capitalletter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    for p in password_:
+        for c in capitalletter:
+            if p == c:
+                print ("There was atleast one capital letter detected.")
+            else:
+                print ("No capital letter was detected in your input.")
+
 
 passwordintro ()
+
+password = getpassword ()
+
+capitallettercounter = capitalletter (password)
