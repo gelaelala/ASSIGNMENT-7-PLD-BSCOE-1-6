@@ -10,11 +10,13 @@
 
 import time
 
-print ("Welcome to word, vowel, and consonant counter!")
-time.sleep (2)
-print ("Please enter your sentence for the program to count the amount of words, vowels, and consonants.")
-time.sleep (2)
-sentence = input("Enter sentence here: ")
+def sentenceinput():
+    print ("Welcome to word, vowel, and consonant counter!")
+    time.sleep (2)
+    print ("Please enter your sentence for the program to count the amount of words, vowels, and consonants.")
+    time.sleep (2)
+    sentence = input("Enter sentence here: ")
+    return sentence
 
 def countvowels (sentence):
     count = 0
@@ -41,6 +43,7 @@ def displayresult (vowelcount_, consonantcount_):
     time.sleep (2)
     print (f'Based on the sentence that you entered, there are {consonantcount_} consonants counted.')
 
+sentence = sentenceinput ()
 
 vowelcount = countvowels (sentence)
 
