@@ -18,13 +18,18 @@ def sentenceinput():
     sentence = input("Enter sentence here: ")
     return sentence
 
+def wordcounter (sentence):
+    wordnum = sentence.split ()
+    wordcount = len(wordnum)
+    return wordcount
+
 def countvowels (sentence):
     count = 0
     vowels = 'AEIOUaeiou'
     for s in sentence:
         for v in vowels:
             if s == v:
-                count = count+1
+                count = count + 1
     return count
 
 def countconsonants (sentence):
@@ -33,11 +38,13 @@ def countconsonants (sentence):
     for s in sentence:
         for c in consonants:
             if s == c:
-                count = count+1
+                count = count + 1
     return count\
 
-def displayresult (vowelcount_, consonantcount_):
+def displayresult (wordcount_, vowelcount_, consonantcount_):
     print ('Here are the results based from the sentence that you entered:')
+    time.sleep (2)
+    print (f'Based on the sentence that you entered, there are a total of {wordcount_} words.')
     time.sleep (2)
     print (f'Based on the sentence that you entered, there are {vowelcount_} vowels counted.')
     time.sleep (2)
@@ -45,8 +52,10 @@ def displayresult (vowelcount_, consonantcount_):
 
 sentence = sentenceinput ()
 
+wordcount = wordcounter (sentence)
+
 vowelcount = countvowels (sentence)
 
 consonantcount = countconsonants (sentence)
 
-results = displayresult (vowelcount, consonantcount)
+results = displayresult (wordcount, vowelcount, consonantcount)
