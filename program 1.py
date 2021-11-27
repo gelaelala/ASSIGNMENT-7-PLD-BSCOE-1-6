@@ -25,6 +25,25 @@ def countvowels (sentence):
                 count = count+1
     return count
 
+def countconsonants (sentence):
+    count = 0
+    consonants = 'BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstuvwxyz'
+    for s in sentence:
+        for c in consonants:
+            if s == c:
+                count = count+1
+    return count\
+
+def displayresult (vowelcount_, consonantcount_):
+    print ('Here are the results based from the sentence that you entered:')
+    time.sleep (2)
+    print (f'Based on the sentence that you entered, there are {vowelcount_} vowels counted.')
+    time.sleep (2)
+    print (f'Based on the sentence that you entered, there are {consonantcount_} consonants counted.')
+
+
 vowelcount = countvowels (sentence)
 
-print (f'Based on the sentence that you entered, here are {vowelcount} vowels counted.')
+consonantcount = countconsonants (sentence)
+
+results = displayresult (vowelcount, consonantcount)
