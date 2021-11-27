@@ -37,13 +37,46 @@ def capitalletter (password_):
     for p in password_:
         for c in capitalletter:
             if p == c:
-                print ("There was atleast one capital letter detected.")
+                print ("There is at least one capital letter detected in your input.")
             else:
                 print ("No capital letter was detected in your input.")
 
+def numbers (password_):
+    numbers = "0123456789"
+    for p in password_:
+        for n in numbers:
+            if p == n:
+                print ("There is at least one number detected in your input.")
+            else:
+                print ("There is no number detected in your input.")
+
+def specialcharacters (password_):
+    specialchar = "!@#$%^&*()_+-=/\'?:;,{[]}`.~"
+    for p in password_:
+        for s in specialchar:
+            if p == s: 
+                print ("There is at least one special character detected in your input.")
+            else:
+                print ("There are no special characters detected in your input.")
+
+def lettercounter (password_):
+    count = 0
+    for p in password_:
+        for co in count:
+            count = count + 1
+    if count > 15:
+        print ("There are more than 15 letters detected in your input.")
+    else:
+        print ("The amount of letters detected in your input is less than 15.")
 
 passwordintro ()
 
 password = getpassword ()
 
-capitallettercounter = capitalletter (password)
+capitalletterdetector = capitalletter (password)
+
+numberdetector = numbers (password)
+
+specialchardetector = specialcharacters (password)
+
+letters = lettercounter (password)
