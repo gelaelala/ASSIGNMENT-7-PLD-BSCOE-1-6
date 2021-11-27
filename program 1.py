@@ -22,7 +22,7 @@ def wordcounter (sentence):
     wordnum = sentence.split ()
     wordcount = len(wordnum)
     return wordcount
-
+            
 def countvowels (sentence):
     count = 0
     vowels = 'AEIOUaeiou'
