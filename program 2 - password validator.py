@@ -28,3 +28,5 @@ def passwordintro ():
     time.sleep (1)
     print ("That's all for the instructions, you can now enter your password.")
 
+
+passwordintro ()
