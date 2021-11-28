@@ -39,7 +39,7 @@ def countconsonants (sentence):
         for c in consonants:
             if s == c:
                 count = count + 1
-    return count\
+    return count
 
 def displayresult (wordcount_, vowelcount_, consonantcount_):
     print ('Here are the results based from the sentence that you entered:')
