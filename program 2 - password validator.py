@@ -33,41 +33,52 @@ def getpassword ():
     return userpassword
 
 def capitalletter (password_):
+    count = 0
     capitalletter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     for p in password_:
         for c in capitalletter:
             if p == c:
-                print ("There is at least one capital letter detected in your input.")
-            else:
-                print ("No capital letter was detected in your input.")
+                    count = count + 1
+    return count
 
 def numbers (password_):
+    count = 0
     numbers = "0123456789"
     for p in password_:
         for n in numbers:
             if p == n:
-                print ("There is at least one number detected in your input.")
-            else:
-                print ("There is no number detected in your input.")
+                    count = count + 1
+    return count
 
 def specialcharacters (password_):
+    count = 0
     specialchar = "!@#$%^&*()_+-=/\'?:;,{[]}`.~"
     for p in password_:
         for s in specialchar:
-            if p == s: 
-                print ("There is at least one special character detected in your input.")
-            else:
-                print ("There are no special characters detected in your input.")
+            if p == s:
+                count = count + 1
+    return count
 
 def lettercounter (password_):
     count = 0
     for p in password_:
-        for co in count:
-            count = count + 1
-    if count > 15:
-        print ("There are more than 15 letters detected in your input.")
+            letter = len(p)
+            count = count + letter
+    return count
+
+def results (letters_, capitalletter_, numberdetector_, specialcharac):
+    print ('After checking the password that you entered:')
+    time.sleep (2)
+    if letters_ > 15:
+        print ("The number of letters in your password is greater than 15 letters.")
     else:
-        print ("The amount of letters detected in your input is less than 15.")
+        print ("The number of letters in your password is less than or equal to 15.")
+    time.sleep(1)
+    print (f"There's {capitalletter_} capital letter/s detected in your password.")
+    time.sleep (1)
+    print (f"There's {numberdetector_} number/s detected in your password.")
+    time.sleep (1)
+    print (f"There's {specialcharac} special character/s detected in your password.")
 
 passwordintro ()
 
@@ -80,3 +91,5 @@ numberdetector = numbers (password)
 specialchardetector = specialcharacters (password)
 
 letters = lettercounter (password)
+
+results (letters, capitalletterdetector, numberdetector, specialchardetector)
