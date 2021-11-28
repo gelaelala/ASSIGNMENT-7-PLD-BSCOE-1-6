@@ -10,6 +10,7 @@
 #ouput: Valid
 
 import time
+import sys
 
 def passwordintro ():
     print ('Hello and welcome to Password Validator!')
@@ -79,6 +80,22 @@ def results (letters_, capitalletter_, numberdetector_, specialcharac):
     print (f"There's {numberdetector_} number/s detected in your password.")
     time.sleep (1)
     print (f"There's {specialcharac} special character/s detected in your password.")
+    time.sleep (1)
+    if letters_ > 15 and capitalletter_ >= 1:
+        if numberdetector_ >= 1 and specialcharac >= 1:
+            print ("Overall, your password is valid.")
+            time.sleep (1)
+            print ("That's all, thank you for using password validator!")
+    else:
+        print ("Overall, your password is invalid. You might have missed at least one of the guidelines, please try again.")
+        password = getpassword ()
+        capitalletterdetector = capitalletter (password)
+        numberdetector = numbers (password)
+        specialchardetector = specialcharacters (password)
+        letters = lettercounter (password)
+        results (letters, capitalletterdetector, numberdetector, specialchardetector)
+    sys.exit
+
 
 passwordintro ()
 
