@@ -44,11 +44,20 @@ def countconsonants (sentence):
 def displayresult (wordcount_, vowelcount_, consonantcount_):
     print ('Here are the results based from the sentence that you entered:')
     time.sleep (2)
-    print (f"Based on the sentence that you entered, there's a total of {wordcount_} word/s.")
+    if wordcount_ == 1:
+        print (f"Based on the sentence that you entered, there's a total of {wordcount_} word.")
+    else:
+        print (f"Based on the sentence that you entered, there's a total of {wordcount_} words.")
     time.sleep (2)
-    print (f'Based on the sentence that you entered, there are {vowelcount_} vowels counted.')
+    if vowelcount_ == 1:
+        print (f"Based on the sentence that you entered, there's {vowelcount_} vowel counted.")
+    else:
+        print (f'Based on the sentence that you entered, there are {vowelcount_} vowels counted.')
     time.sleep (2)
-    print (f'Based on the sentence that you entered, there are {consonantcount_} consonants counted.')
+    if consonantcount_ == 1:
+        print (f"Based on the sentence that you entered, ther's {consonantcount_} consonant counted.")
+    else:
+        print (f'Based on the sentence that you entered, there are {consonantcount_} consonants counted.')
 
 sentence = sentenceinput ()
 
