@@ -11,6 +11,7 @@
 
 import time
 import sys
+from colorama import Fore, Back, Style
 
 def passwordintro ():
     print ('Hello and welcome to Password Validator!')
@@ -83,11 +84,13 @@ def results (letters_, capitalletter_, numberdetector_, specialcharac):
     time.sleep (1)
     if letters_ > 15 and capitalletter_ >= 1:
         if numberdetector_ >= 1 and specialcharac >= 1:
-            print ("Overall, your password is valid.")
+            print (Fore.GREEN + "Overall, your password is valid.")
+            print (Fore.RESET)
             time.sleep (1)
             print ("That's all, thank you for using password validator!")
     else:
-        print ("Overall, your password is invalid. You might have missed at least one of the guidelines, please try again.")
+        print (Fore.RED + "Overall, your password is invalid. You might have missed at least one of the guidelines, please try again.")
+        print (Style.RESET_ALL)
         password = getpassword ()
         capitalletterdetector = capitalletter (password)
         numberdetector = numbers (password)
